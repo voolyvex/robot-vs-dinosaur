@@ -1,27 +1,28 @@
 
 from dinosaur import Dinosaur
 from robot import Robot
+from slow_print import slow_print
 
 
 class Battlefield:
     def __init__(self):
-        self.robot = Robot("Girard", 90)
-        self.dinosaur = Dinosaur("Strego", 20)
+        self.robot = Robot("Robbie", 90)
+        self.dinosaur = Dinosaur("Pterodactyl", 20)
 
     def run_game(self):
         self.display_welcome()
         self.battle_phase()
 
     def display_welcome(self):
-        print("\nWelcome to the battlefield of Robot vs Dinosaur!\nPrepare for battle")
+        slow_print("\nWelcome to the battlefield of Robot vs Dinosaur!\nPrepare for battle")
 
     def battle_phase(self):
         while self.robot.health > 0 and self.dinosaur.health > 0:
             self.robot.attack(self.dinosaur)
             if self.dinosaur.health <= 0:
-                print(self.dinosaur.name, "is dead\n")
+                slow_print(self.dinosaur.name, "is dead\n")
             else:
-                print("Health of", self.dinosaur.name, "is now", self.dinosaur.health)
+                slow_print("Health of", self.dinosaur.name, "is now", self.dinosaur.health)
                 print()
             if self.robot.health > 0 and self.dinosaur.health > 0:
                 self.dinosaur.attack(self.robot)
