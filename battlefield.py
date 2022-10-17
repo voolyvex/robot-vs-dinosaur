@@ -22,7 +22,7 @@ class Battlefield:
             if self.dinosaur.health <= 0:
                 print(self.dinosaur.name, "is dead")
             else:
-                slow_print("Health of", self.dinosaur.name, "is now", self.dinosaur.health)
+                print("Health of", self.dinosaur.name, "is now", self.dinosaur.health)
                 print()
             if self.robot.health > 0 and self.dinosaur.health > 0:
                 self.dinosaur.attack(self.robot)
