@@ -1,4 +1,5 @@
 from weapon import Weapon
+from slow_print import slow_print as s
 
 
 class Robot:
@@ -8,8 +9,8 @@ class Robot:
         self.active_weapon = Weapon("Laser", 22)
 
     def attack(self, dinosaur):
-        print(f"\nRobot {self.name} attacks with {self.active_weapon.name}!")
+        s(f"\nRobot {self.name} attacks with {self.active_weapon.name}!")
         dinosaur.health -= self.active_weapon.attack_power
-        print(f"Dinosaur {dinosaur.name} is damaged -{self.active_weapon.attack_power} points")
+        s(f"Dinosaur {dinosaur.name} is damaged by {self.active_weapon.attack_power} points")
 
   
