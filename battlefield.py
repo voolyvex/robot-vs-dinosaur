@@ -20,14 +20,14 @@ class Battlefield:
         while self.robot.health > 0 and self.dinosaur.health > 0:
             self.robot.attack(self.dinosaur)
             if self.dinosaur.health <= 0:
-                slow_print(self.dinosaur.name, "is dead\n")
+                print(self.dinosaur.name, "is dead")
             else:
                 slow_print("Health of", self.dinosaur.name, "is now", self.dinosaur.health)
                 print()
             if self.robot.health > 0 and self.dinosaur.health > 0:
                 self.dinosaur.attack(self.robot)
                 if self.robot.health < 0:
-                    print(self.robot.name, "is dead\n")
+                    print(self.robot.name, "is dead")
                 else:
                     print("Health of", self.robot.name, "is now", self.robot.health)
                     print()
@@ -36,6 +36,6 @@ class Battlefield:
     def display_winner(self):
         print("Victory acheived!")
         if self.robot.health <= 0:
-            print(f"The winner is the dinosaur, {self.dinosaur.name}!\n")
+            print(f"The winner is dinosaur {self.dinosaur.name}!\n")
         else:
-            print(f"The winner is the robot, {self.robot.name}!\n")
+            print(f"The winner is robot {self.robot.name}!\n")
